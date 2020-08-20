@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.sjlending
+testFramework: kotlintest
+sourceLanguage: kotlin
+buildTool: gradle
+features: [annotation-api, app-name, asciidoctor, cache-caffeine, config4k, data, data-jdbc, docker, file-watch, gradle, http-client, jdbc-hikari, jib, kotlin, kotlin-application, kotlin-extension-functions, kotlintest, kubernetes, log4j2, management, mysql, netty-server, reactor, readme, security, security-annotations, testcontainers, tracing-zipkin]
