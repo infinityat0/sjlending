@@ -40,9 +40,9 @@ dependencies {
     implementation("io.micronaut:micronaut-management")
     implementation("io.micronaut:micronaut-tracing")
     implementation("io.opentracing.brave:brave-opentracing")
+    implementation("com.google.code.gson:gson:${gsonVersion}")
+    implementation("io.micronaut.sql:micronaut-vertx-mysql-client")
 
-    runtimeOnly("io.zipkin.brave:brave-instrumentation-http")
-    runtimeOnly("io.zipkin.reporter2:zipkin-reporter")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("io.micronaut.data:micronaut-data-jdbc")
     implementation("io.micronaut.security:micronaut-security")
@@ -66,7 +66,7 @@ dependencies {
 
 test.classpath += configurations.developmentOnly
 
-mainClassName = "com.sjlending.ApplicationKt"
+mainClassName = "com.sjlending.api.Application"
 
 // use JUnit 5 platform
 test {
