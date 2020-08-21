@@ -15,7 +15,11 @@ class ApiController(private val service: CustomerService) {
     private val logger = LogManager.getLogger(this.javaClass.name)
   }
 
-  @Put("/customer/new")
+  @Put("/customer")
+  @Produces(MediaType.TEXT_PLAIN)
+  fun putCustomer(@Body jsonBody: String): HttpResponse<*> = newCustomer(jsonBody)
+
+  @Post("/customer")
   @Produces(MediaType.TEXT_PLAIN)
   fun newCustomer(@Body jsonBody: String): HttpResponse<*> =
       execute {

@@ -3,6 +3,10 @@ micronaut:
     name: api
   server:
     port: 9086
+    cors:
+      enabled: true
+  security:
+    enabled: false
 
 datasource:
   table-name: ${env}_customers
