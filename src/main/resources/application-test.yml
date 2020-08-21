@@ -1,3 +1,17 @@
+#env: prod
+#vertx:
+#  mysql:
+#    client:
+#      port: 3306
+#      host: sjlending.com
+#      database: sjlending
+#      user: sjlending
+#      password: Sujji12!1
+#      maxSize: 5
+#
+#datasource:
+#  table-name: ${env}_customers
+
 vertx:
   mysql:
     client:

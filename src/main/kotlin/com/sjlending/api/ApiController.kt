@@ -2,10 +2,7 @@ package com.sjlending.api
 
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.MediaType
-import io.micronaut.http.annotation.Body
-import io.micronaut.http.annotation.Controller
-import io.micronaut.http.annotation.Post
-import io.micronaut.http.annotation.Produces
+import io.micronaut.http.annotation.*
 import io.micronaut.security.annotation.Secured
 import io.micronaut.security.rules.SecurityRule
 import org.apache.logging.log4j.LogManager
@@ -18,7 +15,7 @@ class ApiController(private val service: CustomerService) {
     private val logger = LogManager.getLogger(this.javaClass.name)
   }
 
-  @Post("/customer/new")
+  @Put("/customer/new")
   @Produces(MediaType.TEXT_PLAIN)
   fun newCustomer(@Body jsonBody: String): HttpResponse<*> =
       execute {
