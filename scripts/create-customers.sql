@@ -4,7 +4,8 @@ create table IF NOT EXISTS __TABLE_NAME__ (
    customer_id INT NOT NULL AUTO_INCREMENT,
    first_name VARCHAR(50) NOT NULL,
    last_name VARCHAR(50) NOT NULL,
-   borrow_amount DECIMAL(8,2) NOT NULL,
+   ssn VARCHAR(15) NOT NULL,
+   borrow_amount DECIMAL(12,2) NOT NULL,
    phone VARCHAR(15) NOT NULL,
    email VARCHAR(100) NOT NULL,
    street VARCHAR(100) NOT NULL,
@@ -13,7 +14,7 @@ create table IF NOT EXISTS __TABLE_NAME__ (
    zip_code VARCHAR(15) NOT NULL,
 
    message TEXT,
-   creation_at DATE,
+   created_at DATE,
    modified_at DATE,
 
    PRIMARY KEY ( customer_id )

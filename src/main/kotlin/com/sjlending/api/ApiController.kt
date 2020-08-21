@@ -26,7 +26,7 @@ class ApiController(private val service: CustomerService) {
         logger.log(Level.FINE) { "Creating a new customer" }
 
         val customer = jsonBody.parse<Customer>()
-        service.createNewCustomer(customer)
+        service.create(customer)
 
         logger.log(Level.FINE) { "customer creation successful" }
       }
@@ -36,6 +36,8 @@ class ApiController(private val service: CustomerService) {
         block()
         HttpResponse.ok("")
       } catch (ex: Exception) {
-        HttpResponse.serverError("Failed while handling the notification")
+        ex.printStackTrace()
+        logger.ifInfo { "Failed creating a customer: ex=$ex" }
+        HttpResponse.serverError("Failed creating a customer")
       }
 }

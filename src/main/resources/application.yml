@@ -1,0 +1,18 @@
+micronaut:
+  application:
+    name: api
+  server:
+    port: 9086
+
+datasource:
+  table-name: ${env}_customers
+
+vertx:
+  mysql:
+    client:
+      port: 3306
+      host: sjlending.com
+      database: ${env}
+      user: sjlending
+      password: Sujji12!1
+      maxSize: 5

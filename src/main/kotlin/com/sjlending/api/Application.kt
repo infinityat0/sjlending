@@ -1,6 +1,6 @@
 package com.sjlending.api
 
-import io.micronaut.runtime.Micronaut.*
+import io.micronaut.runtime.Micronaut.build
 
 object Application {
   @JvmStatic
@@ -12,5 +12,3 @@ object Application {
         .start()
   }
 }
-
-
