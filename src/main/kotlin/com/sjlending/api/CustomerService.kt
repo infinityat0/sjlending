@@ -3,8 +3,7 @@ package com.sjlending.api
 import io.micronaut.context.annotation.Property
 import io.vertx.reactivex.mysqlclient.MySQLPool
 import io.vertx.reactivex.sqlclient.Row
-import java.util.logging.Level
-import java.util.logging.Logger
+import org.apache.logging.log4j.LogManager
 import javax.inject.Singleton
 
 @Singleton
@@ -15,11 +14,11 @@ class CustomerService(
 ) {
 
   companion object {
-    private val logger = Logger.getLogger(this.javaClass.name)
+    private val logger = LogManager.getLogger(this.javaClass.name)
   }
 
   fun create(customer: Customer) {
-    logger.log(Level.FINE) { "Creating a new customer: $customer" }
+    logger.ifDebug { "Creating a new customer: $customer" }
     client
         .preparedQuery(customer.insertQuery(table))
         .rxExecute(customer.values())

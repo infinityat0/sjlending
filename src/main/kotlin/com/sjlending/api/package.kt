@@ -2,12 +2,9 @@ package com.sjlending.api
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import io.micronaut.context.annotation.Property
 import io.vertx.reactivex.sqlclient.Tuple
+import org.apache.logging.log4j.Logger
 import java.sql.Date
-import java.util.logging.Level
-import java.util.logging.Logger
-import javax.inject.Singleton
 
 val gson: Gson = GsonBuilder().setPrettyPrinting().create()
 
@@ -15,14 +12,14 @@ val gson: Gson = GsonBuilder().setPrettyPrinting().create()
 inline fun <reified T> String.parse(): T = gson.fromJson(this, T::class.java)
 
 fun Logger.ifDebug(msg: () -> String) {
-  if (this.isLoggable(Level.FINE)) {
-    this.log(Level.FINE, msg)
+  if (this.isDebugEnabled) {
+    this.debug(msg)
   }
 }
 
 fun Logger.ifInfo(msg: () -> String) {
-  if (this.isLoggable(Level.INFO)) {
-    this.log(Level.INFO, msg)
+  if (this.isInfoEnabled) {
+    this.info(msg)
   }
 }
 
