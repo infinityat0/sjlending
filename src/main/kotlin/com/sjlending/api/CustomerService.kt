@@ -14,7 +14,7 @@ class CustomerService(
 ) {
 
   companion object {
-    private val logger = LogManager.getLogger(this.javaClass.name)
+    private val logger = LogManager.getLogger(this::class.java)
   }
 
   fun create(customer: Customer) {

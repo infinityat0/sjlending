@@ -38,6 +38,6 @@ class ApiController(private val service: CustomerService) {
       } catch (ex: Exception) {
         ex.printStackTrace()
         logger.ifInfo { "Failed creating a customer: ex=$ex" }
-        HttpResponse.serverError("Failed creating a customer")
+        HttpResponse.serverError("Failed creating a customer: message=${ex.message}")
       }
 }
